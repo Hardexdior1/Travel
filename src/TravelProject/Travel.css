@@ -1,0 +1,149 @@
+
+.wrap{
+    position: relative;
+}
+form{
+    /* position: absolute;
+    z-index: 50; */
+    margin: 0 auto;
+}
+
+.countryNameFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 5px; */
+}
+.countryAndTextpad{
+    padding: 8px;
+
+}
+
+.countryAndTextpad p{
+    /* text-align: center; */
+    word-spacing: 2px;
+    line-height: 1.2;
+}
+.carrierFlex{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid;
+    padding: 10px;
+    gap: 20px;
+}
+.flexSub{
+    width: 100%;
+    /* color: white; */
+    background-color: aliceblue;
+    border-radius: 15px;
+    box-shadow: 3px 3px 2px rgb(88, 85, 85);
+    padding: 5px;
+}
+.flexSub1{
+    background-color: rgb(254, 254, 255);
+    box-shadow: 2px 2px 3px rgb(207, 200, 200);
+        height: fit-content;
+        text-align: center;
+        width: 100%;
+    border-radius: 15px;
+    padding: 5px;
+    border: 1px solid grey;
+
+
+
+}
+body{
+    /* background-color: rgb(109, 97, 97); */
+    /* background-image: url(../images/travelHeroImg.jpg); */
+    background-size: cover;
+}
+.flexSub1 button{
+    padding: 12px 35px;
+    border: 1px solid blue;
+    color: blue;
+    font-weight: bold;
+    margin: 5px;
+    cursor: pointer;
+}
+.flexSub1 p{
+    padding: 7px;
+    text-align: left;
+    word-spacing: 2px;
+    line-height: 1.2;
+
+}
+.btnCarrier{
+    
+   
+    text-align: center;
+}
+.btnCarrier .notInterestedBtn{
+/* display: ; */
+margin-right: 10px;
+padding: 12px 25px;
+font-weight: bold;
+border: 1px solid red;
+color: red;
+background-color: white;
+transition: 0.3s;
+cursor: pointer;
+border-radius: 3px;
+}
+.btnCarrier .notInterestedBtn:hover{
+    background-color: red;
+    color: white;
+}
+.btnCarrier .interestedBtn{
+    /* display: ; */
+    margin-right: 10px;
+    padding: 12px 25px;
+    font-weight: bold;
+    color: white
+    ;
+    border: 1px solid green;
+
+    background-color: green;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 3px;
+    }
+    .btnCarrier .interestedBtn:hover{
+        background-color: white;
+        color: green;
+    }
+    
+        @media (max-width:313px) {
+            .btnCarrier button{
+                margin-bottom: 5px;
+            }
+        }
+.carrierFlex  img{
+    width: 100%;
+    /* height: 400px; */
+    /* object-fit: cover; */
+    /* object-fit: contain; */
+    border-radius: 10px;
+    
+}
+
+@media (max-width:767px) {
+    .carrierFlex{
+        flex-wrap: wrap;
+    }
+}
+
+
+/* hero */
+.hero{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/img18.jpg);
+    background-size: cover;
+}
+.small{
+    color: red;
+    font-weight: bold;
+}
