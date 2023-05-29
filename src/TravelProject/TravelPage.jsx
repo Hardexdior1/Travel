@@ -14,7 +14,6 @@ const TravelPage = ({
   id,
   price,
   removeCountry,
-  codesAndRandom,
 }) => {
   const [showNicePlaceToBe2, setShowNicePlaceToBe2] = useState(false);
   const [showNicePlaceToBe1, setShowNicePlaceToBe1] = useState(true);
@@ -27,6 +26,32 @@ const TravelPage = ({
   console.log(removeCountry);
   console.log(TravelPage);
 
+  // form
+  const [name, setName] = useState("");
+  const [travelCode, setTravelCode] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+
+  const submit = () => {
+    if (name == ""||travelCode==''||address==''||email=='') {
+      alert("please make sure you fill out the form ");
+    } else if (
+      travelCode.toLocaleLowerCase() !== userCodes.toLocaleLowerCase()
+    ) {
+      alert('check your code  seems it does"t match with the provided one ');
+    } else if(''){
+
+    }
+    
+    else {
+      alert(
+        "Dear " +
+          name +
+          " thanks for your registration to travel to " +
+          countryName
+      );
+    }
+  };
   return (
     <div className="wrap">
       {/* <h1>{codesAndRandom}</h1> */}
@@ -93,14 +118,22 @@ const TravelPage = ({
                     setShowRegistration(true);
                     let codes = [
                       649 + "#advs",
-                      655 + "&rts",
+                      655 + "#&rts",
                       986 + "#**44f",
-                      541 + "ooje",
-                      768 + "j@ty#",
-                      442 + "bcdgty",
-                      87 + "nbtg",
-                      984 + "6tgh",
-                      562 + "kgtyf",
+                      541 + "#ooje",
+                      768 + "#@ty#",
+                      442 + "#cdgty",
+                      87 + "#btg",
+                      984 + "#6tgh",
+                      562 + "#kgtyf",
+                      967 + "#wwds#",
+                      332 + "#22edd",
+                      472 + "#220dd",
+                      985 + "#ssd",
+                      654 + "#40of",
+                      511 + "#dyn",
+                      6107 + "#ght",
+                      877 + "#rvgt",
                     ];
                     let random = Math.floor(Math.random() * codes.length);
                     let codesAndRandom = codes[random];
@@ -115,7 +148,6 @@ const TravelPage = ({
                   onClick={() => {
                     setAboutToDelete(true);
                     setShowRegistration(false);
-
                   }}>
                   not interested
                 </button>
@@ -170,9 +202,21 @@ const TravelPage = ({
       </div>
 
       {showRegistration ? (
-        <form>
-          <h2>{whereUserWantsToTravelTo}</h2>
-          <h5>your travel code is <b>{userCodes}</b></h5>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            const userDetails = {
+              name: name,
+              travelCode: travelCode,
+              address: address,
+              email: email,
+            };
+            console.log(userDetails);
+          }}>
+          <h3>{whereUserWantsToTravelTo}</h3>
+          <h5>
+            your travel code is <b>{userCodes}</b>
+          </h5>
           <span>
             no longer interested?{" "}
             <button
@@ -182,6 +226,63 @@ const TravelPage = ({
               close registration
             </button>
           </span>
+          <div>
+            <label htmlFor="name">
+              <b>name: </b>
+            </label>
+            <input
+              id="name"
+              onChange={(event) => {
+                setName(event.target.value);
+                console.log(event.target.value);
+              }}
+              type="text"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="code">
+              <b>code:</b>
+            </label>
+            <input
+              type="text"
+              name="code"
+              onChange={(event) => {
+                setTravelCode(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="address">
+              <b>your address:</b>
+            </label>
+            <input
+              type="text"
+              name="address"
+              onChange={(event) => {
+                setAddress(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="emailAddress">
+              <b>email address:</b>
+            </label>
+            <input
+              type="text"
+              name="emailAddress"
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+            />
+          </div>
+          <button
+            type="submit"
+            onClick={() => {
+              submit();
+            }}>
+            checkout to {countryName}
+          </button>
         </form>
       ) : (
         ""
