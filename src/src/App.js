@@ -4,11 +4,13 @@ import React, { useRef, useState } from "react";
 import TravelPage from "./TravelProject/TravelPage";
 import TravelData from "./TravelProject/TravelData";
 import Hero from "./TravelProject/Hero";
-import NoResultPage from "./TravelProject/NoResultPage";
+
 function App() {
   // let rps = ["rock", "paper", "scissors"];
   // let randomeNuber1 = Math.floor(Math.random() * 3);
   //   let personal = rps[randomeNuber1];
+
+  
 
   // console.log(codesAndRandom);
   const nav = useRef();
@@ -33,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <nav className="nav" ref={nav}>
-        <h1 className="h1">Travelex </h1>
+        <h1 className="h1">Travelex</h1>
 
         <input
           className="input"
@@ -44,8 +46,8 @@ function App() {
           }}
         />
       </nav>
+      <h1>{dataReceived.length}</h1>
       <div className="countriesLengthDiv">
-        
         {dataReceived.length < 1 ? (
           <div>
             <small>
@@ -73,7 +75,9 @@ function App() {
               .includes(searchTerm.toLocaleLowerCase())
           ) {
             return dataReceived;
-          } 
+          } else {
+            console.log("no result");
+          }
         })
         .map((dataReceived) => {
           return (
@@ -94,7 +98,6 @@ function App() {
           />
         );
       })} */}
-
       <Hero />
     </div>
   );

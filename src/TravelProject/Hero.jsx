@@ -1,11 +1,18 @@
 import React from 'react'
 import './Travel.css'
-const Hero = () => {
+// seki 155928
+const Hero = ({searchTerm}) => {
+
+
   return (
     <div>
-      <div className='hero'>
-        <h1>Choose your dream country good God  and watch <em>Travelex</em> turn your dream into reality welcome </h1>
-      </div>
+      
+        {/*  */}
+     <center className='copyWright'>
+
+      @copywright 2023 coded by {'<>oluwadamilare</>'}
+     </center>
+      
 <a href="">Refresh</a>
 
 

@@ -1,66 +1,18 @@
-body{
+
+.wrap{
     position: relative;
-
-}
-
-.auto{
-    text-align: left;
-}
- input{
-   border-radius: 3px;
-   border: 2px solid blanchedalmond;
-   width: 200px;
-   height: 20px;
-}
-.successMessage{
-    color: green;
-    font-weight: lighter;
-    background-color: white;
-    border-radius: 3px;
-    padding: 30px;
-   max-width: 200px;
-    text-align: center;
-    z-index: 50;
-    position: absolute;
-    right: 0;
-    left: 0;
-   bottom: 50px;
-    margin: 0 auto;
-    word-spacing: 3px;
-
-}
-.successMessage p{
-    margin-right:5px;
 }
 form{
-   border: 1px solid grey;
-   margin-top: 14px;
-   display: flex;
-   flex-direction: column;
-   gap: 7px;
-   /* align-items: center; */
-   /* justify-content: center; */
-   color: white;
-   max-width: 600px;
-   border-radius: 5px;
-   padding: 10px;
-    background-image: linear-gradient(black,rgb(7, 1, 1));
-    margin-top: 20px;
+    /* position: absolute;
+    z-index: 50; */
+    margin: 0 auto;
 }
 
-.notInterested{
-    color: red;
-    font-weight: bold;
-}
-button{
-    cursor: pointer;
-}
 .countryNameFlex{
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* padding: 5px; */
-
 }
 .countryAndTextpad{
     padding: 8px;
@@ -82,23 +34,13 @@ button{
 .flexSub{
     width: 100%;
     /* color: white; */
-    /* background-color: aliceblue; */
+    background-color: aliceblue;
     border-radius: 15px;
     box-shadow: 3px 3px 2px rgb(88, 85, 85);
     padding: 5px;
-    position: relative;
-         background-color: black;
-         color: white;
-
-
-}
-.h5{
-    color: white;
 }
 .flexSub1{
-    /* background-color: rgb(254, 254, 255); */
-    background-image: linear-gradient(rgb(97, 91, 91),white);
-    /* color: white;  */
+    background-color: rgb(254, 254, 255);
     box-shadow: 2px 2px 3px rgb(207, 200, 200);
         height: fit-content;
         text-align: center;
@@ -106,7 +48,7 @@ button{
     border-radius: 15px;
     padding: 5px;
     border: 1px solid grey;
-transition: 0.3s ease-in;
+
 
 
 }
@@ -117,18 +59,11 @@ body{
 }
 .flexSub1 button{
     padding: 12px 35px;
-    border: 2px solid black;
-    color: white;
+    border: 1px solid blue;
+    color: blue;
     font-weight: bold;
     margin: 5px;
     cursor: pointer;
-    background-color: black;
-    transition: 0.3s;
-}
-.flexSub1 button:hover{
-    border: 1px solid black;
-    background-color: white;
-    color: black;
 }
 .flexSub1 p{
     padding: 7px;
@@ -184,8 +119,8 @@ border-radius: 3px;
         }
 .carrierFlex  img{
     width: 100%;
-    height: 350px;
-    object-fit: cover;
+    /* height: 400px; */
+    /* object-fit: cover; */
     /* object-fit: contain; */
     border-radius: 10px;
     
@@ -211,33 +146,4 @@ border-radius: 3px;
 .small{
     color: red;
     font-weight: bold;
-}
-.price{
-    color:green;
-    font-weight: lighter;
-}
-form{
-    margin: 0 auto;
-}
-
-.checkOutBtn{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
-    color: black;
-    font-weight: bold;
-    margin: 5px;
-    background-color: white;
-    transition: 0.3s;
-}
-.checkOutBtn:hover{
-    opacity: 0.5;
-}
-
-
-.copyWright{
-    padding: 10px;
-    background-color:black;
-    color:white;
-    font-weight:bold;
 }
