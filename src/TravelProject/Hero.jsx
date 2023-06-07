@@ -1,7 +1,7 @@
 import React from 'react'
 import './Travel.css'
 // seki 155928
-const Hero = ({searchTerm}) => {
+const Hero = () => {
 
 
   return (
@@ -10,7 +10,8 @@ const Hero = ({searchTerm}) => {
         {/*  */}
      <center className='copyWright'>
 
-      @copywright 2023 coded by {'<>oluwadamilare</>'}
+    <small>      @copywright 2023 coded by {'<>oluwadamilare</>'}
+</small>
      </center>
       
 <a href="">Refresh</a>

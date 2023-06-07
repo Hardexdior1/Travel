@@ -35,19 +35,15 @@ const TravelPage = ({
   // registration message
   const [showSuccessfulMessage, setShowSuccessfulMessage] = useState(false);
 
+  const[allCountryInfo,setAllCountryInfo]=useState(false);
+
   const submit = () => {
     if (
       email.length > 10 &&
       email.endsWith("@gmail.com") &&
       userCodes.toLocaleLowerCase() == travelCode.toLocaleLowerCase()
     ) {
-      // alert(
-      //   "Dear " +
-      //     name +
-      //     " your registration to travel to " +
-      //     countryName +
-      //     ' was successful we"ll contact you through your email for further information...'
-      // );
+      
       setShowSuccessfulMessage(true);
       setShowRegistration(false);
     } else if (name == "" || address == "" || email == "" || travelCode == "") {
@@ -60,23 +56,7 @@ const TravelPage = ({
       alert("invalid email");
     }
 
-    // 8073351890
-    // else if (name == "" || travelCode == "" || address == "" || email == "") {
-    //     alert("please make sure you fill out the form and make sure your email is correct");
-    //   } else if (
-    //     travelCode.toLocaleLowerCase() !== userCodes.toLocaleLowerCase()||travelCode==''
-    //   ) {
-    //     alert('check your code  seems it does"t match with the provided one ');
-    //   } else {
-    //     alert(
-    //       "Dear " +
-    //         name +
-    //         " thanks for your registration to travel to " +
-    //         countryName +
-    //         ' we"ll contact you through your email for further information',
-    //       setShowRegistration(false)
-    //     );
-    //   }
+    
   };
   return (
     <div className="wrap">
@@ -95,9 +75,18 @@ const TravelPage = ({
                 <h4 className="price">travelCost: <b>${price}</b></h4>
               </div>
 
-              <p>
+              <p className="showMoreLessBigDevice">
                 {countryName} {countryInfo}
               </p>
+
+             <div className="showMoreLess">
+             {allCountryInfo? <p>{countryInfo} <button onClick={()=>{
+                setAllCountryInfo(false)
+              }}>see less  </button></p>:<p>{countryInfo.slice(0,330) +'...' } <button onClick={()=>{
+                setAllCountryInfo(true)
+              }}>see more  </button></p>}
+             </div>
+              
               <div className="btnCarrier">
                 {showAboutToDelete ? (
                   <div>
@@ -280,6 +269,7 @@ const TravelPage = ({
                          <div>
                          {" "}
                           <label htmlFor="emailAddress">
+                            {/* <a href="https://gericht-restaurant-ashen.vercel.app" target="blank">gbebody e</a> */}
                             <b>email address:</b>
                           </label>
 

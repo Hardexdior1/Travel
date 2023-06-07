@@ -92,6 +92,9 @@ button{
 
 
 }
+.flexSub p{
+    font-size: 0.9rem;
+}
 .h5{
     color: white;
 }
@@ -135,6 +138,7 @@ body{
     text-align: left;
     word-spacing: 2px;
     line-height: 1.2;
+    font-size: 0.9rem;
 
 }
 .btnCarrier{
@@ -240,4 +244,15 @@ form{
     background-color:black;
     color:white;
     font-weight:bold;
+}
+
+
+@media (min-width:540px) {
+    .showMoreLess{display: none;}
+
+}
+@media (max-width:539px) {
+    .showMoreLessBigDevice{
+        display: none;
+    }
 }
