@@ -5,6 +5,7 @@ import TravelPage from "./TravelProject/TravelPage";
 import TravelData from "./TravelProject/TravelData";
 import Hero from "./TravelProject/Hero";
 import NoResultPage from "./TravelProject/NoResultPage";
+
 function App() {
   // let rps = ["rock", "paper", "scissors"];
   // let randomeNuber1 = Math.floor(Math.random() * 3);
@@ -12,15 +13,7 @@ function App() {
 
   // console.log(codesAndRandom);
   const nav = useRef();
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      nav.current.classList.remove("nav");
-      nav.current.classList.add("navFixed");
-    } else {
-      nav.current.classList.add("nav");
-      nav.current.classList.remove("navFixed");
-    }
-  });
+
   const [dataReceived, setDataReceived] = useState(TravelData);
   const [totalExpenses, setTotalExpenses] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -30,8 +23,82 @@ function App() {
   };
   console.log(dataReceived);
 
+  const menu = useRef();
+  const [navBar, setNav] = useState(true);
+
+  function toggle() {
+    if (navBar == true) {
+      menu.current.classList.remove("ul");
+      menu.current.classList.add("ulShow");
+    } else if (navBar !== true) {
+      console.log("not true ");
+      menu.current.classList.add("ul");
+      menu.current.classList.remove("ulShow");
+    }
+  }
+  const navWrap = useRef();
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1000) {
+      navWrap.current.classList.add("navW");
+    } else {
+      navWrap.current.classList.remove("navW");
+    }
+  });
   return (
     <div className="App">
+      {/* <nav className="nav" ref={nav}>
+        <h1 className="h1">Travelex </h1>
+
+        <input
+          className="input"
+          type="text"
+          placeholder="search country"
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        />
+      </nav> */}
+      <div className="navWrap" ref={navWrap}>
+        <nav className="navbar">
+          <h1 className="h1">Travelex</h1>
+          <u className="ul" ref={menu}>
+          <li><a href="#">Home</a></li>
+
+            <li><a href="#">About</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Feature</a></li>
+          </u>
+          <div
+            className="menu"
+            onClick={() => {
+              toggle();
+              setNav(!navBar);
+            }}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </nav>
+      </div>
+      
+      <section className="heroWrap">
+        <div className="background">
+          <h1>
+            Explore the world and travel to the country of your choice in easy and simple
+            way with the help of <i>Travelex </i>...
+          </h1>
+        </div>
+      </section>
+      {/* <section className="search-carrier">
+      <input
+          className="input"
+          type="text"
+          placeholder="search country"
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        />
+      </section> */}
       <nav className="nav" ref={nav}>
         <h1 className="h1">Travelex </h1>
 
@@ -45,7 +112,6 @@ function App() {
         />
       </nav>
       <div className="countriesLengthDiv">
-        
         {dataReceived.length < 1 ? (
           <div>
             <small>
@@ -73,15 +139,19 @@ function App() {
               .includes(searchTerm.toLocaleLowerCase())
           ) {
             return dataReceived;
-          } 
+          }
         })
         .map((dataReceived) => {
           return (
-            <TravelPage
+       
+           <div>
+     
+             <TravelPage
               key={dataReceived.id}
               {...dataReceived}
               removeCountry={removeCountry}
             />
+           </div>
           );
         })}
       {/* {dataReceived.map((dataReceived) => {

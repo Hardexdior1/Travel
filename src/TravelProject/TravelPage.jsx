@@ -28,7 +28,7 @@ const TravelPage = ({
 
   // form
   const [name, setName] = useState("");
-  const [travelCode, setTravelCode] = useState("");
+  const [travelCode, setTravelCode] = useState("")
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
 
@@ -41,12 +41,12 @@ const TravelPage = ({
     if (
       email.length > 10 &&
       email.endsWith("@gmail.com") &&
-      userCodes.toLocaleLowerCase() == travelCode.toLocaleLowerCase()
+      userCodes.toLocaleLowerCase() === travelCode.toLocaleLowerCase()
     ) {
       
       setShowSuccessfulMessage(true);
       setShowRegistration(false);
-    } else if (name == "" || address == "" || email == "" || travelCode == "") {
+    } else if (name === "" || address === "" || email === "" || travelCode === "") {
       alert("please fill out the form");
     } else if (
       userCodes.toLocaleLowerCase() !== travelCode.toLocaleLowerCase()
@@ -150,7 +150,7 @@ const TravelPage = ({
                       877 + "#rvgt",
                     ];
                     let random = Math.floor(Math.random() * codes.length);
-                    let codesAndRandom = codes[random];
+                    let codesAndRandom = codes[random]
 
                     setUserCodes(codesAndRandom + countryName);
                   }}>
