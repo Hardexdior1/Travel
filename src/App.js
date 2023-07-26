@@ -36,14 +36,15 @@ function App() {
       menu.current.classList.remove("ulShow");
     }
   }
-  const navWrap = useRef();
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 1000) {
-      navWrap.current.classList.add("navW");
-    } else {
-      navWrap.current.classList.remove("navW");
-    }
-  });
+  // const navWrap = useRef();
+  // window.addEventListener("scroll", () => {
+  //   if (window.scrollY > 1000) {
+  //     navWrap.current.classList.add("navW");
+  //   } else {
+  //     navWrap.current.classList.remove("navW");
+  //   }
+  // });
+  const[area,setArea]=useState('')
   return (
     <div className="App">
       {/* <nav className="nav" ref={nav}>
@@ -58,7 +59,7 @@ function App() {
           }}
         />
       </nav> */}
-      <div className="navWrap" ref={navWrap}>
+      <div className="navWrap" >
         <nav className="navbar">
           <h1 className="h1">Travelex</h1>
           <u className="ul" ref={menu}>
@@ -166,6 +167,8 @@ function App() {
       })} */}
 
       <Hero />
+
+   
     </div>
   );
 }
