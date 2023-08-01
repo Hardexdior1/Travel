@@ -358,8 +358,8 @@ form {
 
 .background h1{
     font-size: 2.7rem;
-color: black;
-/* color: white; */
+/* color: black; */
+color: white;
 z-index: 30;
 font-weight: bold;
     word-spacing: 1.5px;
@@ -370,8 +370,9 @@ font-weight: bold;
     margin-bottom: 0;
     /* background-color: red; */
     /* background-image: url(../images/img11.jpg); */
-        background-image: url(../images/img18.jpg);
+        /* background-image: url(../images/img18.jpg); */
 
+        background-image: url(../images/img27.jpg);
 
     display: flex;
     flex-direction: column;
@@ -380,6 +381,18 @@ font-weight: bold;
     height: 90vh;
     background-size: cover;
    
+}
+@media (max-width:671px) {
+  .heroWrap{
+    background-image: url(../images/img27.jpg);
+    height: 50vh;
+    background-size: contain;
+  }
+  .background h1{
+    color: white;
+    font-size: 2rem;
+    z-index: 40;
+  }
 }
 @media (max-width:640px) {
     .heroWrap{

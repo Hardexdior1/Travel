@@ -14,7 +14,6 @@ const Hero = () => {
 </small>
      </center>
       
-<a href="">Refresh</a>
 
 
     </div>
